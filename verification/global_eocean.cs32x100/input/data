@@ -4,18 +4,18 @@
 #
 # Continuous equation parameters
  &PARM01
- tRef=15*20.,
- sRef=15*35.,
+ tRef=15*0.,
+ sRef=15*5.,
  viscAh =3.E5,
- viscAr =1.E-3,
- diffKrT=3.E-5,
- diffKrS=3.E-5,
+ viscAr =1.E-1,
+ diffKrT=1.E-1,
+ diffKrS=1.E-1,
  ivdc_kappa=10.,
  implicitDiffusion=.TRUE.,
  gravity=9.81,
  rhoConst=1035.,
  rhoConstFresh=1000.,
- eosType='JMD95Z',
+ eosType='LINEAR',
  staggerTimeStep=.TRUE.,
  vectorInvariantMomentum=.TRUE.,
  implicitFreeSurface=.TRUE.,
@@ -42,7 +42,7 @@
 
 # Time stepping parameters
  &PARM03
- nIter0=72000,
+ nIter0=0,
  nTimeSteps=20,
  deltaTMom   =1200.,
  deltaTtracer=86400.,
@@ -70,21 +70,19 @@
  &PARM04
  usingCurvilinearGrid=.TRUE.,
  horizGridFile='grid_cs32',
- radius_fromHorizGrid=6370.E3,
- delR= 50., 70., 100., 140., 190.,
-       240., 290., 340., 390., 440.,
-       490., 540., 590., 640., 690.,
+ radius_fromHorizGrid=1500.E3,
+ delR= 100*1000.
  &
 
 # Input datasets
  &PARM05
- bathyFile      ='bathy_Hmin50.bin',
- hydrogThetaFile='lev_T_cs_15k.bin',
- hydrogSaltFile ='lev_S_cs_15k.bin',
- zonalWindFile  ='trenberth_taux.bin',
- meridWindFile  ='trenberth_tauy.bin',
- thetaClimFile  ='lev_surfT_cs_12m.bin',
- saltClimFile   ='lev_surfS_cs_12m.bin',
- surfQnetFile   ='shiQnet_cs32.bin',
- EmPmRFile      ='shiEmPR_cs32.bin',
+ # bathyFile      ='bathy_Hmin50.bin',
+ # hydrogThetaFile='lev_T_cs_15k.bin',
+ # hydrogSaltFile ='lev_S_cs_15k.bin',
+ # zonalWindFile  ='trenberth_taux.bin',
+ # meridWindFile  ='trenberth_tauy.bin',
+ # thetaClimFile  ='lev_surfT_cs_12m.bin',
+ # saltClimFile   ='lev_surfS_cs_12m.bin',
+ # surfQnetFile   ='shiQnet_cs32.bin',
+ # EmPmRFile      ='shiEmPR_cs32.bin',
  &
