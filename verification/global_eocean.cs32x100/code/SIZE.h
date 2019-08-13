@@ -57,7 +57,7 @@ C    input.icedyn : needs at least Olx=Oly=4 (CS-grid multidimensional Advect.)
      &           nPy =   1,
      &           Nx  = sNx*nSx*nPx,
      &           Ny  = sNy*nSy*nPy,
-     &           Nr  =  15)
+     &           Nr  = 100)
 
 C     MAX_OLX :: Set to the maximum overlap region size of any array
 C     MAX_OLY    that will be exchanged. Controls the sizing of exch
