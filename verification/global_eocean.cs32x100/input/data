@@ -75,8 +75,9 @@
  &PARM04
  usingCurvilinearGrid=.TRUE.,
  horizGridFile='grid_cs32',
- radius_fromHorizGrid=1500.E3,
- delR= 100*1000.
+ rSphere=1500.E3,
+ radius_fromHorizGrid=6370.E3,
+ delR= 101*1000.
  &
 
 # Input datasets
