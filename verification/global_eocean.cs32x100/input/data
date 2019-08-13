@@ -91,4 +91,5 @@
 #  saltClimFile   ='lev_surfS_cs_12m.bin',
 #  surfQnetFile   ='shiQnet_cs32.bin',
 #  EmPmRFile      ='shiEmPR_cs32.bin',
+   geothermalFile ='geoq.bin',
  &
