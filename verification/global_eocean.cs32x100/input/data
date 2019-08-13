@@ -12,7 +12,8 @@
  diffKrS=1.E-1,
  ivdc_kappa=10.,
  implicitDiffusion=.TRUE.,
- gravity=9.81,
+#gravity=9.81,
+ gravity=0.0788,
  rhoConst=1035.,
  rhoConstFresh=1000.,
  eosType='LINEAR',
@@ -31,6 +32,8 @@
  readBinaryPrec=64,
  useSingleCpuIO=.TRUE.,
  plotLevel=0,
+ rotationPeriod=3.E5,
+#rotationPeriod=86400.,
  &
 
 # Elliptic solver parameters
@@ -60,9 +63,11 @@
  externForcingPeriod=2592000.,
  externForcingCycle=31104000.,
 # 2 months restoring timescale for temperature
- tauThetaClimRelax = 5184000.,
+#tauThetaClimRelax = 5184000.,
+ tauThetaClimRelax = 0.,
 # 2yrs restoring timescale for salinity
- tauSaltClimRelax = 62208000.,
+#tauSaltClimRelax = 62208000.,
+ tauSaltClimRelax = 0.,
  monitorFreq =1.,
  &
 
@@ -76,13 +81,13 @@
 
 # Input datasets
  &PARM05
- # bathyFile      ='bathy_Hmin50.bin',
- # hydrogThetaFile='lev_T_cs_15k.bin',
- # hydrogSaltFile ='lev_S_cs_15k.bin',
- # zonalWindFile  ='trenberth_taux.bin',
- # meridWindFile  ='trenberth_tauy.bin',
- # thetaClimFile  ='lev_surfT_cs_12m.bin',
- # saltClimFile   ='lev_surfS_cs_12m.bin',
- # surfQnetFile   ='shiQnet_cs32.bin',
- # EmPmRFile      ='shiEmPR_cs32.bin',
+#  bathyFile      ='bathy_Hmin50.bin',
+#  hydrogThetaFile='lev_T_cs_15k.bin',
+#  hydrogSaltFile ='lev_S_cs_15k.bin',
+#  zonalWindFile  ='trenberth_taux.bin',
+#  meridWindFile  ='trenberth_tauy.bin',
+#  thetaClimFile  ='lev_surfT_cs_12m.bin',
+#  saltClimFile   ='lev_surfS_cs_12m.bin',
+#  surfQnetFile   ='shiQnet_cs32.bin',
+#  EmPmRFile      ='shiEmPR_cs32.bin',
  &
