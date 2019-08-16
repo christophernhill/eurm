@@ -2,7 +2,7 @@
 #
 import numpy as np
 
-nx, ny, nr, nt = 32, 32, 101, 6
+nx, ny, nr, nt = 32, 32, 100, 6
 
 # ------------------------------------------------------
 
@@ -16,5 +16,12 @@ def writefield(fname,data):
 
 # Generate geothemal heat flux file
 np.random.seed(1)
-gflux=(np.random.rand(nx,ny,nt)-0.5)*1.e-4
+gflux=(np.random.rand(nx,ny,nt)-0.5)*1.e-6+0.1
 writefield('geoq.bin',gflux)
+
+# Generate RBCS to relax to zero at surface
+mask=np.zeros((nr,nt,ny,nx))
+mask[0,:,:,:]=1.
+rvals=np.zeros((nr,nt,ny,nx))
+writefield('rbcsthetamask.bin',mask)
+writefield('rbcsthetavals.bin',rvals)

@@ -48,16 +48,16 @@ C    input.viscA4 : needs at least Olx=Oly=3 (for biharmonic viscosity) ;
 C    input.icedyn : needs at least Olx=Oly=4 (CS-grid multidimensional Advect.)
       PARAMETER (
      &           sNx =  32,
-     &           sNy =  16,
+     &           sNy =  32,
      &           OLx =   4,
      &           OLy =   4,
-     &           nSx =  12,
+     &           nSx =   6,
      &           nSy =   1,
      &           nPx =   1,
      &           nPy =   1,
      &           Nx  = sNx*nSx*nPx,
      &           Ny  = sNy*nSy*nPy,
-     &           Nr  = 101)
+     &           Nr  = 100)
 
 C     MAX_OLX :: Set to the maximum overlap region size of any array
 C     MAX_OLY    that will be exchanged. Controls the sizing of exch

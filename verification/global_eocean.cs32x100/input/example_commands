@@ -1,0 +1,9 @@
+# Plot mean kinetic energy
+cat STDOUT.txt  | grep ke_mean | awk '{print $6}' | python ../input/plotmonts.py
+cat STDOUT.txt  | grep ke_mean | awk '{print $6}' | tail -1000 | python ../input/plotmonts.py
+cat STDOUT.txt | grep dynstat_theta_min | awk '{print $6}' | tail -100 | python ../input/plotmonts.py 
+cat STDOUT.txt | grep dynstat_theta_min | awk '{print $6}' | tail -1000 | python ../input/plotmonts.py 
+cat STDOUT.txt | grep dynstat_theta_max | awk '{print $6}' | tail -1000 | python ../input/plotmonts.py 
+cat STDOUT.txt | grep dynstat_theta_mean | awk '{print $6}' | tail -1000 | python ../input/plotmonts.py 
+cat STDOUT.txt  | grep theta_sd | awk '{print $6}' | tail -300 | python ../input/plotmonts.py
+

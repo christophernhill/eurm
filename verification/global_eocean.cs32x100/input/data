@@ -4,16 +4,20 @@
 #
 # Continuous equation parameters
  &PARM01
- tRef=15*0.,
- sRef=15*5.,
- viscAh =3.E5,
- viscAr =1.E-1,
- diffKrT=1.E-1,
- diffKrS=1.E-1,
- ivdc_kappa=10.,
+ tRef=100*0.,
+ sRef=100*0.,
+ tAlpha=1.E-4,
+ sBeta=1.E-4,
+ viscAh =2.E4,
+ viscAr =5.,
+ diffKrT=5.,
+ diffKrS=5.,
+ ivdc_kappa=10,
  implicitDiffusion=.TRUE.,
 #gravity=9.81,
- gravity=0.0788,
+ gravity=1.,
+# Large slow waves for accelerated time stepping
+#gravity=0.0788,
  rhoConst=1035.,
  rhoConstFresh=1000.,
  eosType='LINEAR',
@@ -31,7 +35,8 @@
  hFacMinDr=20.,
  readBinaryPrec=64,
  useSingleCpuIO=.TRUE.,
- plotLevel=0,
+ plotLevel=3,
+ debugLevel=3,
  rotationPeriod=3.E5,
 #rotationPeriod=86400.,
  &
@@ -46,29 +51,35 @@
 # Time stepping parameters
  &PARM03
  nIter0=0,
- nTimeSteps=20,
+ nTimeSteps=36000,
+ nTimeSteps=300000,
  deltaTMom   =1200.,
+#deltaTtracer=86400.,
+#deltaTFreeSurf=86400.,
+#deltaTClock =86400.,
  deltaTtracer=86400.,
  deltaTFreeSurf=86400.,
  deltaTClock =86400.,
  abEps = 0.1,
 #forcing_In_AB=.FALSE.,
  tracForcingOutAB=1,
- pChkptFreq  =1728000.,
+# pChkptFreq  =1728000.,
+ pChkptFreq =311040000.,
 #chkptFreq   =311040000.,
  taveFreq    =1244160000.,
- dumpFreq    =622080000.,
+ dumpFreq    =6000000.,
+#dumpFreq    =1.,
  monitorFreq =31104000.,
- periodicExternalForcing=.TRUE.,
- externForcingPeriod=2592000.,
- externForcingCycle=31104000.,
+#periodicExternalForcing=.TRUE.,
+#externForcingPeriod=2592000.,
+#externForcingCycle=31104000.,
 # 2 months restoring timescale for temperature
 #tauThetaClimRelax = 5184000.,
  tauThetaClimRelax = 0.,
 # 2yrs restoring timescale for salinity
 #tauSaltClimRelax = 62208000.,
  tauSaltClimRelax = 0.,
- monitorFreq =1.,
+ monitorFreq =300000.,
  &
 
 # Gridding parameters
@@ -77,7 +88,7 @@
  horizGridFile='grid_cs32',
  rSphere=1500.E3,
  radius_fromHorizGrid=6370.E3,
- delR= 101*1000.
+ delR= 100*1000.
  &
 
 # Input datasets
